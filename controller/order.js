@@ -66,7 +66,7 @@ module.exports = {
               shipping: {
                 name: user.name,
                 address: {
-                  country: addressId.country,
+                  country: req.body.token.card.country,
                 },
               },
             },
@@ -84,7 +84,7 @@ module.exports = {
             receiptUrl: charge.receipt_url,
           },
           products: productsInCart,
-          addressId: addressId,
+          addressId: req.body.token.card.country,
           status: "ACTIVE",
         };
 
